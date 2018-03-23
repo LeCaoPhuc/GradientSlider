@@ -13,12 +13,10 @@ public class CustomColorSlider: UIControl {
     static var defaultThumbWidth:CGFloat = 5.0
     static var defaultHeight:CGFloat = 15.0
     
-    var minimumValue: CGFloat = 0.0
-    var maximumValue: CGFloat = 1.0
+    public var minimumValue: CGFloat = 0.0
+    public var maximumValue: CGFloat = 1.0
     open var defaultValue: CGFloat = 0.5
-    static let colorArray : [Any] = [UIColor(red: 255/255, green: 0/255,   blue: 23/255, alpha: 1.0).cgColor,
-                                     UIColor(red: 253/255, green: 253/255, blue: 86/255, alpha: 1.0).cgColor,
-                                     UIColor(red: 147/255, green: 190/255, blue: 87/255, alpha: 1.0).cgColor]
+    static let colorArray : [Any] = [UIColor(red: 255/255, green: 0/255,   blue: 23/255, alpha: 1.0).cgColor]
     
     
     fileprivate var _trackLayer:CAGradientLayer = {
@@ -27,23 +25,16 @@ public class CustomColorSlider: UIControl {
         track.endPoint = CGPoint(x: 1.0, y: 0.5)
         track.locations = [0.0,0.5,0.8,1.0]
         track.colors = colorArray
-        track.borderColor = UIColor.lightGray.cgColor
-        track.borderWidth = 1.0
-        track.shadowRadius = 2.0
-        track.shadowOpacity = 0.25
-        track.shadowOffset = CGSize(width: 0.0, height: 1.0)
-        track.cornerRadius = defaultHeight / 2.0
+        track.cornerRadius = 0
         return track
     }()
     
     fileprivate var _thumbLayer:CALayer = {
         let thumb = CALayer()
+        let image = UIImage.init(named: "Iconsmall");
+        thumb.contents = image;
         thumb.backgroundColor = UIColor.black.cgColor
-        thumb.shadowColor = UIColor.black.cgColor
-        thumb.shadowOffset = CGSize(width: 0.0, height: 2.5)
-        thumb.shadowRadius = 2.0
-        thumb.cornerRadius = defaultHeight / 10.0
-        thumb.shadowOpacity = 0.25
+        thumb.cornerRadius = 0;
         return thumb
     }()
     
