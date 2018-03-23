@@ -11,12 +11,12 @@ import UIKit
 public class CustomColorSlider: UIControl {
     
     static var defaultThumbWidth:CGFloat = 5.0
-    static var defaultHeight:CGFloat = 15.0
+    static var defaultHeight:CGFloat = 10
     
     public var minimumValue: CGFloat = 0.0
     public var maximumValue: CGFloat = 1.0
     open var defaultValue: CGFloat = 0.5
-    static let colorArray : [Any] = [UIColor(red: 255/255, green: 0/255,   blue: 23/255, alpha: 1.0).cgColor]
+    static let colorArray : [Any] = [UIColor(red: 255, green: 0,   blue: 0, alpha: 1.0).cgColor]
     
     
     fileprivate var _trackLayer:CAGradientLayer = {
@@ -24,7 +24,7 @@ public class CustomColorSlider: UIControl {
         track.startPoint = CGPoint(x: 0.0, y: 0.5)
         track.endPoint = CGPoint(x: 1.0, y: 0.5)
         track.locations = [0.0,0.5,0.8,1.0]
-        track.colors = colorArray
+        track.backgroundColor = UIColor(red: 211/255, green: 185/255, blue: 247/255, alpha: 1.0).cgColor;
         track.cornerRadius = 0
         return track
     }()
@@ -32,8 +32,7 @@ public class CustomColorSlider: UIControl {
     fileprivate var _thumbLayer:CALayer = {
         let thumb = CALayer()
         let image = UIImage.init(named: "Iconsmall");
-        thumb.contents = image;
-        thumb.backgroundColor = UIColor.black.cgColor
+        thumb.backgroundColor = UIColor(red: 6/255, green: 0/255, blue: 20/255, alpha: 1).cgColor;
         thumb.cornerRadius = 0;
         return thumb
     }()
