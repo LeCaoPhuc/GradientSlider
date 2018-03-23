@@ -31,7 +31,6 @@ public class CustomColorSlider: UIControl {
     
     fileprivate var _thumbLayer:CALayer = {
         let thumb = CALayer()
-        let image = UIImage.init(named: "Iconsmall");
         thumb.backgroundColor = UIColor(red: 6/255, green: 0/255, blue: 20/255, alpha: 1).cgColor;
         thumb.cornerRadius = 0;
         return thumb
