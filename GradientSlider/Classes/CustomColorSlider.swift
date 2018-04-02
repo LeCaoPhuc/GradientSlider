@@ -25,7 +25,7 @@ public class CustomColorSlider: UIControl {
         track.endPoint = CGPoint(x: 1.0, y: 0.5)
         track.locations = [0.0,0.5,0.8,1.0]
         track.backgroundColor = UIColor(red: 211/255, green: 185/255, blue: 247/255, alpha: 1.0).cgColor;
-        track.cornerRadius = 0
+        track.cornerRadius = 15
         return track
     }()
     
