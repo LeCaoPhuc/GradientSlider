@@ -90,7 +90,7 @@ public class CustomColorSlider: UIControl {
         
     }
     
-    func setValue(_ values:CGFloat, animated:Bool = true) {
+    public func setValue(_ values:CGFloat, animated:Bool = true) {
         defaultValue = max(min(values,self.maximumValue),self.minimumValue)
         updateThumbPosition()
     }
